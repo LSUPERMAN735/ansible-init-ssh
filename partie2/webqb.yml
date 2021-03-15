@@ -1,0 +1,15 @@
+---
+- hosts: all
+  tasks:
+   - name: Mise à jour
+     apt:
+       update_cache: yes
+
+   - name: Installation du serveur Web Nginx
+     apt:
+       name: nginx
+
+   - name: Copie de la page HTML principale
+     copy:
+      src: index.html
+      dest: /var/www/html/

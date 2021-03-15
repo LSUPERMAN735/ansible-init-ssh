@@ -1,0 +1,10 @@
+---
+- hosts: srv3
+  tasks:
+   - name: Mise à jour
+     apt:
+       update_cache: yes
+
+   - name: Installation du serveur Web mysql-server
+     apt:
+       name: mysql-server

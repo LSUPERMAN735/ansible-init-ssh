@@ -1,0 +1,12 @@
+---
+- hosts: routeurs
+  connection: local
+
+  tasks:
+   - name: Configurer le nom du routeur
+     ios_config:
+      host: "{{ inventory_hostname }}"
+      provider:
+        username: etudiant
+        password: vitrygtr
+        lines: hostname SITTINGBULL

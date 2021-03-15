@@ -1,0 +1,23 @@
+---
+- hosts: routeurs
+  connection: local
+
+  tasks:
+   - name: Configurer le nom du routeur
+     ios_config:
+      host: "{{ inventory_hostname }}"
+      provider:
+        username: etudiant
+        password: vitrygtr
+        lines: hostname william
+          switchport access vlan 100
+          enable
+          configure terminal
+          username laura password 0 mysister
+          aaa new-model
+          username amine password 0 yourbrother
+          aaa new-model
+          username microsoft password 0 moneypenny
+          aaa new-model
+          username pigeon password 0 pigeon
+          aaa new-model
