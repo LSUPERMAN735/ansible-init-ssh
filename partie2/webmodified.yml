@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: web
   tasks:
    - name: Mise à jour
      apt:
@@ -8,8 +8,3 @@
    - name: Installation du serveur Web Nginx
      apt:
        name: nginx
-       state: present
-
-  - name: "Activation de Nginx"
-    service: 
-      name:

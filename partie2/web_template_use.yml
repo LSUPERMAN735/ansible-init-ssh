@@ -1,0 +1,15 @@
+---
+- hosts: web
+  tasks:
+   - name: Mise à jour
+     apt:
+       update_cache: yes
+
+   - name: Installation du serveur Web Nginx
+     apt:
+       name: nginx
+
+   - name: Configuration de Nginx
+     template:
+       src: nginx.conf.j2
+       dest: /etc/nginx/sites-enabled/default
